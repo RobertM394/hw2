@@ -19,8 +19,6 @@
     var cartArray = [speakerObj, cableObj];    
         
     
-    
-    
     //begin populateCart
     populateCart();
     
@@ -28,40 +26,70 @@
         
     //display cart items stored in cartArray
     
-    $("#cartItems").append(`<div> ${cartArray[0].image} <br> <b>  ${cartArray[0].name} </b> <br /> Price: $${cartArray[0].price} <br /> Quantity </div> `);
-    $("#cartItems").append(`<div> ${updateQuantity()} </div>`);
-  
-   
-    $("#cartItems").append(`${cartArray[1].image} <br> <b> ${cartArray[1].name} </b> <br /> Price: $${cartArray[1].price} <br /> Quantity: ${cartArray[1].quantity} <br />`);
-     $("#cartItems").append(`${updateQuantity()} `);
-    }
-    
-   
-    //updateQuantity 
-    function updateQuantity() {
-        
+    //first item
+    $("#cartItems").append(`<div> ${cartArray[0].image} <br> <b>  ${cartArray[0].name} </b> <br /> Price: $${cartArray[0].price} </div> `);
+    $("#cartItems").append( `<div> Quantity: 
 
-    $("#cartItems").append( `
-
-    <select id="quantity">
+    <select id="selectOne">
         <option value=""> Select One </option>
         <option value="1"> 1 </option>
         <option value="2"> 2 </option>
         <option value="3"> 3 </option>
         <option value="4"> 4 </option>
   
+        <div> <br> <br> `)    
+    $("#cartItems").append("<br />")
+   
+   //second item
+    $("#cartItems").append(`<div> ${cartArray[1].image} <br> <b>  ${cartArray[1].name} </b> <br /> Price: $${cartArray[1].price} </div> `);
+    $("#cartItems").append( `<div> Quantity: 
+
+    <select id="selectTwo">
+        <option value=""> Select One </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+  
+        <div> <br /> <br /> `)    
+    }
+     $("#cartItems").append("<br />")
+   
+    //updateQuantity 
+    function updateQuantity() {
+
+        //update item quantity in cart array
+        cartArray[0].quantity = $("#selectOne").val();  
+        cartArray[1].quantity = $("#selectTwo").val();
         
-        `)    
+        var itemsTotal = ( (cartArray[0].quantity * cartArray[0].price) + (cartArray[1].quantity * cartArray[1].price) )
+        var salesTax = itemsTotal * 0.06
+      
+        //update item quantity in cart display
+        $("#itemsPrice").html(`Items: $ ${itemsTotal}`);
+        $("#taxTotal").html(`Tax: $ ${salesTax}`);
         
+        $("#shippingCost").html(`Shipping: $50 `);
         
-        
-        
-    }//updateQuantity
-        
-        
-        
-        
+      
+    };
+    
+    //click button
+    $("#btnQuantity").on("click", function() {
+    
+    updateQuantity(); 
+  
     });
+    
+     $("#btnOrder").on("click", function() {
+    
+    window.location.href = "orderCompleted.html";
+  
+    });
+
+
+        
+    });//document ready
         
         
     </script>
@@ -70,11 +98,11 @@
     
     
     
-    <title> High-Fidelity Audio Shopping Cart </title>
+    <title> High-Fidelity Audio Shopping Cart Page </title>
     </head>
     
     <body class="text-center">
-    <h1 class="jumbotron">High-Fidelity Audio </h1>
+    <h1 class="jumbotron"> ♫ <strong> ƒidelity </strong> Audio ♪ </h1>
     <h2 id="cartTitle">Shopping Cart </h2>
     
     
@@ -82,6 +110,21 @@
     <h5> Review items and shipping: </h5> <br />
     
     
+    </div>
+    
+    
+    <div id="placeOrder">
+    <h3> Order Summary </h3>
+    <p id = "itemsPrice"> Items: $0.00 </p>
+    <p id = "taxTotal"> Sales Tax: $0.00 </p>
+    <p id = "shippingCost" > Shipping: $0.00 </p>
+
+    <h4 id = "totalPrice"> Order Total: </h3>
+    
+    <button class="btn btn-outline-success" id="btnQuantity"> Update Cart Totals </button>
+    <br /> <br /> 
+    <button class="btn btn-outline-success" id="btnOrder"> Place my Order </button>
+        
     </div>
 
     </body>

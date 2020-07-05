@@ -1,4 +1,9 @@
 
+#cartTitle {
+    
+    text-decoration: underline;
+}
+
 
 #cartItems {
     
@@ -8,7 +13,15 @@
     
 }
 
-
+#placeOrder {
+    
+   position:absolute;
+   top:20em;
+   right:20em;
+   text-align: right;
+    
+    
+}
 .cartImg {
     width: 250px;
     height: 250px;
@@ -16,4 +29,10 @@
 
 h5 {
     text-decoration: underline;
+}
+
+
+#thanks {
+    color: darkblue;
+    font-size: 3em;
 }
