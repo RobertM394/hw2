@@ -7,7 +7,10 @@
 
 #cartItems {
     
-    position: absolute;
+    position: relative;
+ 
+    border: thick solid #0000FF;
+    width: 40%;
     margin-left: 3em;
     text-align: left;
     
@@ -15,8 +18,10 @@
 
 #placeOrder {
     
-   position:relative;
-   top:5em;
+   position:absolute;
+   border: thick solid #0000FF;
+   width: 40%;
+   top: 20em;
    right:5em;
    text-align: right;
     
