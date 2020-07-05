@@ -1,0 +1,19 @@
+
+
+#cartItems {
+    
+    width: 50%;
+    margin-left: 3em;
+    text-align: left;
+    
+}
+
+
+.cartImg {
+    width: 250px;
+    height: 250px;
+}
+
+h5 {
+    text-decoration: underline;
+}

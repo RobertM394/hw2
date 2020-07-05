@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style> @import url("css/styles.css"); </style> 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
+    <script>
+    //begin JQuery scripts
+    $(document).ready(function(){
+    
+    //global variables
+    
+    var speakerObj = {id: 1, name: "Type 20 Studio Monitors", image: "<img src='img/type20.jpg' alt='type20'>", price: 2000, quantity: 0};
+    var cableObj = {id: 2, name: "Air Matrix XLR Cables", image: "<img src='img/xlrcables.jpg' alt='xlrCables'>", price: 250, quantity: 2};
+    var cartArray = [speakerObj, cableObj];    
+        
+    
+    
+    
+    //begin populateCart
+    populateCart();
+    
+    function populateCart() {
+        
+    //display cart items stored in cartArray
+    
+    $("#cartItems").append(`<div> ${cartArray[0].image} <br> <b>  ${cartArray[0].name} </b> <br /> Price: $${cartArray[0].price} <br /> Quantity </div> `);
+    $("#cartItems").append(`<div> ${updateQuantity()} </div>`);
+  
+   
+    $("#cartItems").append(`${cartArray[1].image} <br> <b> ${cartArray[1].name} </b> <br /> Price: $${cartArray[1].price} <br /> Quantity: ${cartArray[1].quantity} <br />`);
+     $("#cartItems").append(`${updateQuantity()} `);
+    }
+    
+   
+    //updateQuantity 
+    function updateQuantity() {
+        
+
+    $("#cartItems").append( `
+
+    <select id="quantity">
+        <option value=""> Select One </option>
+        <option value="1"> 1 </option>
+        <option value="2"> 2 </option>
+        <option value="3"> 3 </option>
+        <option value="4"> 4 </option>
+  
+        
+        `)    
+        
+        
+        
+        
+    }//updateQuantity
+        
+        
+        
+        
+    });
+        
+        
+    </script>
+    
+    
+    
+    
+    
+    <title> High-Fidelity Audio Shopping Cart </title>
+    </head>
+    
+    <body class="text-center">
+    <h1 class="jumbotron">High-Fidelity Audio </h1>
+    <h2 id="cartTitle">Shopping Cart </h2>
+    
+    
+    <div id="cartItems">
+    <h5> Review items and shipping: </h5> <br />
+    
+    
+    </div>
+
+    </body>
+</html>
