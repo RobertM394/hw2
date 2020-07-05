@@ -8,8 +8,6 @@
 #cartItems {
     
     position: relative;
- 
-    border: thick solid #0000FF;
     width: 40%;
     margin-left: 3em;
     text-align: left;
@@ -19,17 +17,16 @@
 #placeOrder {
     
    position:absolute;
-   border: thick solid #0000FF;
    width: 40%;
    top: 20em;
-   right:5em;
+   right:8em;
    text-align: right;
-    
-    
+
 }
-.cartImg {
-    width: 250px;
-    height: 250px;
+
+#shippingOptions {
+    display: inline;
+   
 }
 
 h5 {
