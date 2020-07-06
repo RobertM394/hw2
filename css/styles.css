@@ -34,6 +34,13 @@ h5 {
 }
 
 
+#shippingPrompt {
+    font-size: .8em;
+    font-weight: bold;
+    margin: 0;
+    color: darkblue;
+}
+
 #thanks {
     color: darkblue;
     font-size: 3em;

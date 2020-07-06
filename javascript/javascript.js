@@ -68,6 +68,8 @@
         var shippingTotal = shippingChoice * 10 * ( (cartArray[0].quantity * cartArray[0].weightMultiplier) + (cartArray[1].quantity * cartArray[1].weightMultiplier) )
         shippingBool = true;
         var orderTotal = itemsTotal + shippingTotal + salesTax;
+        //save total to local storage
+        localStorage.setItem("order_total", orderTotal);
       
         //update item quantity in cart display
         $("#itemsPrice").html(`Items: $ ${itemsTotal}`);
@@ -98,6 +100,30 @@
          });//
 
 
+    //open modal 
+    $("#addAddress").click(function(){
+    $("#myModal").modal();
+    });
+
+    //save address button
+    $("#saveAddress").on("click", function(){
+        
+     let name = $("#name").val();
+     let phoneNum = $("#phone").val();
+     let address_1 = $("#address1").val();
+     let address_2 = $("#address2").val();
+     let city_State = $("#cityState").val();
+     
+     localStorage.setItem("customer_name", name);
+     localStorage.setItem("customer_phone", phoneNum);
+     localStorage.setItem("customer_address_1", address_1);
+     localStorage.setItem("customer_address_2", address_2);
+     localStorage.setItem("customer_city_state", city_State);
+     
+     console.log(name);
+     $("#cartTitle").html(`${name}'s Shopping Cart`)
+        
+    });
         
     });//document ready
         
