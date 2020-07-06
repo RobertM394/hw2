@@ -18,6 +18,7 @@
     address2 = localStorage.getItem('customer_address_2');
     cityState = localStorage.getItem('customer_city_state');
     total = localStorage.getItem('order_total');
+    shippingMethod = localStorage.getItem('customer_shipping_method');
     
     
     $("#thanks").html(`𝄞 Thanks ${name} for your Order! 𝄞 <br /> <br />`)
@@ -30,7 +31,7 @@
      $("#orderDetails").append(`Street Address (Cont.): ${address2} <br /> `)
      $("#orderDetails").append(`City, State, Zip: ${cityState} <br /> <br /> `)
      $("#orderDetails").append(`Order Total: ${total} <br /> `)
-     $("#orderDetails").append(`Shipping Speed: ${total} <br /> `)
+     $("#orderDetails").append(`Shipping Speed: ${shippingMethod} <br /> `)
         
     });//document ready
         

@@ -56,6 +56,7 @@
         //record shipping option
         var shippingChoice = $("input[name=shipping]:checked").val();
         console.log(shippingChoice);
+        shippingTranslate(shippingChoice);
         
         if (shippingChoice == undefined) {
          $("#shippingValidation").html("Choose a shipping option.");
@@ -124,6 +125,29 @@
      $("#cartTitle").html(`${name}'s Shopping Cart`)
         
     });
+    
+    //associate shipping choice with shipping speed
+    function shippingTranslate(arg){
+        
+        let shippingID = arg;
+        let shippingMethod = "";
+        
+        if (shippingID == "1") {
+            shippingMethod = "Ground";
+        }
+        
+        else if (shippingID == "2") {
+            shippingMethod = "2nd-Day Shipping";
+        }
+        
+        else {
+            shippingMethod = "Overnight";
+        }
+        
+        console.log(shippingMethod);
+        localStorage.setItem("customer_shipping_method", shippingMethod);
+        
+    }
         
     });//document ready
         
